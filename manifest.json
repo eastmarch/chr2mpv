@@ -1,0 +1,28 @@
+{
+  "name": "chr2mpv",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Tries to play the current URL on MPV. Right-click on links or press the toolbar button to activate.",
+  "permissions": ["activeTab", "contextMenus"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsYoruVvDtMLapAPBtmm18ngGLH/+pqqaTV8Olaxbr4xOYM44/TqjEt3W3DwZuSGaKvpXOFsxgreM3J99xeKEEdRDWa1/2VjVc+K09V6dcHwJizEh/Fq4jNA7/is/7fr8baNYbHjRPak/NhLbljOx2hvCoN10lEt0HffgklPUC6uDcLEWQFbgVRTVY2bWmf73uBY3YjEZXH4O6jdbEuLXoeyO/poYC61YUqfQ46ncEkNkv1/JlDqtEuEzsubhYmIUjD5Phrw1UDuNF1KLhWjL1ciettxzqbgAgI3d2exAl3ug6dOYt0+5p8DbAuKiIqKD9/v/R+h9wlP1nzbs5LrSdwIDAQAB",
+  "icons": {
+    "128": "img/icon_128.png",
+    "64": "img/icon_64.png",
+    "32": "img/icon_32.png",
+    "16": "img/icon_16.png"
+  },
+  "browser_action": {
+    "default_title": "chr2mpv"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+M"
+      }
+    }
+  }
+}
