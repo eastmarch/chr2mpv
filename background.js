@@ -2,14 +2,14 @@
 
 chrome.runtime.onInstalled.addListener(function() {
   chrome.contextMenus.create({
-    id: "play-in-mpv",
+    id: "chr2mpv",
     title: "Play link in MPV",
     contexts: ["link"],
   });
 });
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == "play-in-mpv") playInMPV(info.linkUrl);
+  if (info.menuItemId == "chr2mpv") playInMPV(info.linkUrl);
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
