@@ -1,8 +1,8 @@
 {
   "name": "chr2mpv",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 2,
-  "description": "Tries to play the current URL on MPV. Right-click on links or press the toolbar button to activate.",
+  "description": "Tries to play the current URL on MPV. Right-click on links or press ALT+M to activate.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7KzhDu23iF29ixXsTXg3yin52AIiQ70VtigLNq/Z/eQtmopiYwhzvtqZtE2E75Eu7dY1+SefOpVyvUoPLrzKoy/XgaUG1UTS7qmdsjIKt5dWcVqg3JjiZ8ErNLhIRoUGWo3Ihi6xqigJDYy3nTgAhRSFRA31kLBrhCo00Vlm1LbK26H/WvSInr57N2dNmY1z2Em7IeMn109JSrfFKbrYPItuo2qh5/7R350h9x/Ijr4q0KUIIbEao4RS2Fp+aS4fnd9Vpu+B6bkOqXlNB7km3Zht6EZqOhHOCNve9sGa+i64TCiERFlgOQIiTCQNs5aChcgxhnwzC91GI1D5jU3n7wIDAQAB",
   "permissions": ["activeTab", "contextMenus"],
   "icons": {
@@ -21,7 +21,7 @@
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+M"
+        "default": "Alt+M"
       }
     }
   }
