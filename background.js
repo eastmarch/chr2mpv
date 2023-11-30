@@ -1,32 +1,36 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
-    id: "chr2mpv",
-    title: "Play link in MPV",
-    contexts: ["link"],
+    id: 'chr2mpv',
+    title: 'Play link in MPV',
+    contexts: ['link'],
   });
 });
 
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == "chr2mpv") playInMPV(info.linkUrl);
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId == 'chr2mpv') playInMPV(tab.id, info.linkUrl, false);
 });
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.executeScript({code: `(${String(pausePlayback)})();`});
-  playInMPV(tab.url);
+chrome.action.onClicked.addListener((tab) => {
+  playInMPV(tab.id, tab.url, true);
 });
 
-function playInMPV(targetURL) {
-  var link = new URL(targetURL);
-  link.protocol = "ytdl:";
-  // chrome.tabs.update({ url: link.href });
-  chrome.tabs.executeScript({code: `window.location.href = "${link.href}";`});
+function playInMPV(tabID, targetURL, pausePlayback) {
+  let link = targetURL.replace(new RegExp('^(http|https)://', 'i'), 'ytdl://');
+  chrome.scripting.executeScript({
+    target: { tabId: tabID },
+    func: redirectMPV,
+    args: [link, pausePlayback],
+  });
 }
 
-function pausePlayback() {
-  var htmlPlayer = document.querySelector("video");
-  if(htmlPlayer != null) {
-    htmlPlayer.pause();
+function redirectMPV(redirectURL, pausePlayback) {
+  if (pausePlayback) {
+    let htmlPlayer = document.querySelector('video');
+    if (htmlPlayer) {
+      htmlPlayer.pause();
+    }
   }
+  window.location.href = redirectURL;
 }
