@@ -9,7 +9,9 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId == 'chr2mpv') playInMPV(tab.id, info.linkUrl, false);
+  if (info.menuItemId == 'chr2mpv'){
+    playInMPV(tab.id, info.linkUrl, false);
+  }
 });
 
 chrome.action.onClicked.addListener((tab) => {
@@ -26,11 +28,11 @@ function playInMPV(tabID, targetURL, pausePlayback) {
 }
 
 function redirectMPV(redirectURL, pausePlayback) {
+  window.location.href = redirectURL;
   if (pausePlayback) {
-    let htmlPlayer = document.querySelector('video');
-    if (htmlPlayer) {
-      htmlPlayer.pause();
+    const pageVideos = document.querySelectorAll('video');
+    for (const video of pageVideos) {
+      video.pause();
     }
   }
-  window.location.href = redirectURL;
 }

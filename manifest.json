@@ -1,8 +1,8 @@
 {
   "name": "chr2mpv",
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 3,
-  "description": "Tries to play the current URL on MPV. Right-click on links or press ALT+M to activate.",
+  "description": "Tries to play the current URL on MPV. Right-click on links or press Ctrl+Shift+Space to activate.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7KzhDu23iF29ixXsTXg3yin52AIiQ70VtigLNq/Z/eQtmopiYwhzvtqZtE2E75Eu7dY1+SefOpVyvUoPLrzKoy/XgaUG1UTS7qmdsjIKt5dWcVqg3JjiZ8ErNLhIRoUGWo3Ihi6xqigJDYy3nTgAhRSFRA31kLBrhCo00Vlm1LbK26H/WvSInr57N2dNmY1z2Em7IeMn109JSrfFKbrYPItuo2qh5/7R350h9x/Ijr4q0KUIIbEao4RS2Fp+aS4fnd9Vpu+B6bkOqXlNB7km3Zht6EZqOhHOCNve9sGa+i64TCiERFlgOQIiTCQNs5aChcgxhnwzC91GI1D5jU3n7wIDAQAB",
   "permissions": ["activeTab", "contextMenus", "scripting"],
   "icons": {
@@ -12,15 +12,15 @@
     "16": "img/icon_16.png"
   },
   "action": {
-    "default_title": "Open in MPV"
+    "default_title": "Play the current URL in MPV"
   },
   "background": {
-    "service_worker": "background-wrapper.js"
+    "service_worker": "worker.js"
   },
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "default": "Alt+M"
+        "default": "Ctrl+Shift+Space"
       }
     }
   }
