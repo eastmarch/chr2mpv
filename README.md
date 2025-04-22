@@ -2,7 +2,7 @@
 This is a Chromium addon that makes it easier to stream videos in MPV.\
 Clicking the icon in your toolbar will make MPV attempt to play the current URL.\
 If you want to play a specific link on a page, right-click it and select the "Play link in MPV" context menu.\
-The extension can also be activated by the Ctrl+Shift+Space shortcut.\
+The extension can also be activated by the Ctrl+Shift+Space shortcut.
 
 ## Requirements
 1. **[mpv for Windows](https://mpv.io/installation/)**
@@ -21,13 +21,13 @@ A native client is not needed. All this extension does is call MPV via the **ytd
 
 ### Method #1 (Automatic)
 1. Make sure **mpv** and **yt-dlp** are installed / stored in the same folder.
-2. Get the **[ytdlProtocol.bat](https://github.com/eastmarch/ff2mpv/archive/master.zip)** file from this repository.
+2. Get the **[ytdlProtocol.bat](https://github.com/eastmarch/chr2mpv/archive/master.zip)** file from this repository.
 3. Extract it to the folder where MPV is located (important!).
 4. And run the script a single time. No need for administrator permissions.
 
 ### Method #2 (Manual)
 1. Make sure **mpv** and **yt-dlp** are installed / stored in the same folder.
-2. Get the **[ytdlProtocol.reg](https://github.com/eastmarch/ff2mpv/archive/master.zip)** file from this repository.
+2. Get the **[ytdlProtocol.reg](https://github.com/eastmarch/chr2mpv/archive/master.zip)** file from this repository.
 4. Open it with a text editor.
 5. Change the path to the MPV executable in the editor to reflect your installation.
 6. Save, close and double-click it on file explorer to merge the changes to the registry.
